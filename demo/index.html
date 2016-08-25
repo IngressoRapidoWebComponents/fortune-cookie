@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>fortune-cookie demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../fortune-cookie.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+
+    <div class="vertical-section-container centered">
+      <h3>Basic fortune-cookie with handle value as Object Demo</h3>
+      <demo-snippet>
+        <template>
+          <fortune-cookie
+            name="mycookie"
+            handle-value-as="Object">
+          </fortune-cookie>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Expire Observer Demo</h3>
+      <demo-snippet>
+        <template>
+          <fortune-cookie
+            name="mycookie"
+            on-fortune-cookie-expired="_myExpiredObserver">
+          </fortune-cookie>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Load Empty Observer Demo</h3>
+      <demo-snippet>
+        <template>
+          <fortune-cookie
+            name="mycookie"
+            on-fortune-cookie-load-empty="_myLoadEmptyObserver">
+          </fortune-cookie>
+        </template>
+      </demo-snippet>
+    </div>
+
+  </body>
+</html>

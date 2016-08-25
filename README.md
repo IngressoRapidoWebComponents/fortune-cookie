@@ -1,38 +1,34 @@
+[![bower version](https://img.shields.io/bower/v/fortune-cookie.svg)](https://libraries.io/bower/fortune-cookie)
+[![open issues](https://img.shields.io/github/issues/IngressoRapidoWebComponents%2Ffortune-cookie.svg)](https://github.com/IngressoRapidoWebComponents/fortune-cookie/issues)
+[![license](https://img.shields.io/github/license/IngressoRapidoWebComponents%2Ffortune-cookie.svg)](https://github.com/IngressoRapidoWebComponents/fortune-cookie/blob/master/LICENSE)
+
+
 # \<fortune-cookie\>
 
-Element can be used to set and read cookies
+The `fortune-cookie` element can be used to set and read cookies.
+You should have one `fortune-cookie` element per cookie you want to use, defined in many elements by its `name` property.
+You can then read the `value` of the cookie, or save the cookie by setting the `value` attribute or explicitly calling the `save` method.
 
-## Install the Polymer-CLI
+_[Demo and API docs](https://ingressorapidowebcomponents.github.io/components/fortune-cookie/)_
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
+##### Beast features
 
-## Viewing Your Application
+#### Choose to handle value as Object or String
+#### Get when cookies expires with `on-fortune-cookie-expired` observer
+#### Get when cookies loads empty with `on-fortune-cookie-load-empty` observer
 
-```
-$ polymer serve
-```
-
-## Building Your Application
-
-```
-$ polymer build
-```
-
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
-
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
-
-```
-$ polymer serve build/bundled
+Example
+```html
+    <fortune-cookie
+      name="mycookie"
+      value="{{object}}"
+      on-handle-value-as="Object"
+      on-fortune-cookie-expired="_onExpired"
+      on-fortune-cookie-load-empty="_onLoadEmpty">
+    </fortune-cookie>
 ```
 
-## Running Tests
-
+Realod:
+```js
+    this.$.mycookie.load();
 ```
-$ polymer test
-```
-
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
