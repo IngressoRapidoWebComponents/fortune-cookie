@@ -28,6 +28,11 @@ Example
     </fortune-cookie>
 ```
 
+Save:
+```js
+    this.$.mycookie.save();
+```
+
 Realod:
 ```js
     this.$.mycookie.load();
