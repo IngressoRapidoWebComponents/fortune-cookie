@@ -251,7 +251,9 @@ Realod:
         this.fire('fortune-cookie-load-empty', this.name);
       }
       else if (value && this.handleValueAs.toLowerCase() === 'object') {
-        this.value = JSON.parse(value);
+        var object = JSON.parse(value);
+        this.expires = object._expires;
+        this.value = object;
       } else {
         this.value = value;
       }
@@ -286,8 +288,10 @@ Realod:
     },
 
     _getValueToSave() {
-      return this.handleValueAs.toLowerCase() === 'object'
-      && this.value ? JSON.stringify(this.value) : encodeURI(this.value);
+      if (this.value && this.handleValueAs.toLowerCase() === 'object') {
+        this.value._expires = this.expires;
+      }
+      return this.value ? JSON.stringify(this.value) : encodeURI(this.value);
     },
 
     /**
