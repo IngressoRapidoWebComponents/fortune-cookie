@@ -190,6 +190,10 @@ Realod:
       autoSave: {
         type: Boolean,
         value: false
+      },
+
+      _expiresAsyncNumber: {
+        type: Number
       }
     },
     ready: function() {
@@ -202,10 +206,12 @@ Realod:
               && this._expiresValue != this._FOREVER
               && this._expiresValue != this._EXPIRE_NOW) {
 
+        this.cancelAsync(this._expiresAsyncNumber);
+
         var timeout = new Date(this._expiresValue).getTime() - new Date().getTime();
-        this.async(this._expiresWakeUp, timeout);
+        this._expiresAsyncNumber = this.async(this._expiresWakeUp, timeout);
       } else if (this._expiresValue && this._expiresValue != 'Invalid Date') {
-        this.cancelAsync(this._expiresWakeUp);
+        this.cancelAsync(this._expiresAsyncNumber);
       }
     },
 
