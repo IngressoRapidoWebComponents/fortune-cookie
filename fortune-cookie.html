@@ -293,7 +293,7 @@ Realod:
       return prepared;
     },
 
-    _getValueToSave() {
+    _getValueToSave: function() {
       if (this.value && this.handleValueAs.toLowerCase() === 'object') {
         this.value._expires = this.expires;
       }
