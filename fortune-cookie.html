@@ -261,7 +261,7 @@ Reload:
         this.expires = object._expires;
         this.value = object;
       } else {
-        this.value = value.replace(/\"/g, '');
+        this.value = value;
       }
     },
     /**
@@ -299,6 +299,11 @@ Reload:
       if (this.value && this.handleValueAs.toLowerCase() === 'object') {
         this.value._expires = this.expires;
       }
+
+      if(this.handleValueAs.toLowerCase() == 'string') {
+        return this.value;
+      }
+
       return this.value ? JSON.stringify(this.value) : encodeURI(this.value);
     },
 
