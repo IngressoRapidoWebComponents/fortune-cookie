@@ -300,10 +300,6 @@ Reload:
         this.value._expires = this.expires;
       }
 
-      if(this.handleValueAs.toLowerCase() == 'string') {
-        return this.value;
-      }
-      
       return this.value ? JSON.stringify(this.value) : encodeURI(this.value);
     },
 
