@@ -280,7 +280,7 @@ Reload:
     deleteCookie: function() {
       this.async(function() {
         this.set('expires', this._EXPIRE_NOW);
-        this.set('value', undefined);
+        this.set('value');
         this.save();
       }.bind(this));
     },
