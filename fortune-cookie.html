@@ -31,7 +31,7 @@ Save:
     this.$.mycookie.save();
 ```
 
-Realod:
+Reload:
 ```js
     this.$.mycookie.load();
 ```
@@ -261,7 +261,7 @@ Realod:
         this.expires = object._expires;
         this.value = object;
       } else {
-        this.value = value;
+        this.value = value.replace(/\"/g, '');
       }
     },
     /**
@@ -278,9 +278,11 @@ Realod:
      * @method deleteCookie
      */
     deleteCookie: function() {
-      this.expires = this._EXPIRE_NOW;
-      this.value = undefined;
-      this.save();
+      this.async(function() {
+        this.set('expires', this._EXPIRE_NOW);
+        this.set('value');
+        this.save();
+      }.bind(this));
     },
 
     _prepareProperties: function() {
@@ -297,6 +299,7 @@ Realod:
       if (this.value && this.handleValueAs.toLowerCase() === 'object') {
         this.value._expires = this.expires;
       }
+
       return this.value ? JSON.stringify(this.value) : encodeURI(this.value);
     },
 
