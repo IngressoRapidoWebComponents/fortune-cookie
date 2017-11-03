@@ -68,7 +68,7 @@ Reload:
             path: 'path'
           };
           var isMicrosoftBrowser = document.documentMode || /Edge/.test(navigator.userAgent);
-          if (isMicrosoftBrowser){
+          if (!isMicrosoftBrowser){
             defaultVal['domain'] = 'domain';
           }
           return defaultVal;
