@@ -60,12 +60,18 @@ Reload:
 
       _COOKIES_PROPS: {
         type: Object,
-        value: {
-          _expiresValue: 'expires',
-          secure: 'secure',
-          'max-age': 'max-age',
-          domain: 'domain',
-          path: 'path'
+        value: function(){
+          var defaultVal = {
+            _expiresValue: 'expires',
+            secure: 'secure',
+            'max-age': 'max-age',
+            path: 'path'
+          };
+          var isMicrosoftBrowser = document.documentMode || /Edge/.test(navigator.userAgent);
+          if (isMicrosoftBrowser){
+            defaultVal['domain'] = 'domain';
+          }
+          return defaultVal;
         },
         readOnly: true
       },
