@@ -243,7 +243,7 @@ Reload:
         var eq = kv.indexOf('=');
         return {
           name: decodeURI(kv.slice(0, eq)),
-          value: decodeURI(kv.slice(eq + 1))
+          value: decodeURIComponent(kv.slice(eq + 1))
         };
       });
       var nom = this.name;
@@ -258,7 +258,7 @@ Reload:
     load: function() {
       var kv = this._parseCookie();
       var value = kv && kv.value;
-
+      
       if (!value) {
         this.fire('fortune-cookie-load-empty', this.name);
       }
@@ -331,7 +331,7 @@ Reload:
      */
     atomicSave: function() {
       if (this.name && (this.value || this.expires === this._EXPIRE_NOW)) {
-        document.cookie = encodeURI(this.name) + '=' + this._getValueToSave() + this._prepareProperties();
+        document.cookie = encodeURI(this.name) + '=' + encodeURIComponent(this._getValueToSave()) + this._prepareProperties();
       }
     }
   });
