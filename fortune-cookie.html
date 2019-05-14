@@ -264,7 +264,7 @@ Reload:
       }
       else if (value && this.handleValueAs.toLowerCase() === 'object') {
         var object = JSON.parse(value);
-        this.expires = object._expires;
+        this.expires = object._expires || object.expires;
         this.value = object;
       } else {
         this.value = value.replace(/\"/g, '');
