@@ -272,7 +272,7 @@ Reload:
     },
 
     _parseExpiresFromUTC: function(timestamp) {
-      return timestamp && new Date(new Date(timestamp).toISOString().substring(0, 23)).getTime();
+      return timestamp && new Date(new Date(timestamp).toUTCString().substring(0, 25)).getTime();
     },
 
     /**
