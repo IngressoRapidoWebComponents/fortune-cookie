@@ -258,18 +258,23 @@ Reload:
     load: function() {
       var kv = this._parseCookie();
       var value = kv && kv.value;
-      
+
       if (!value) {
         this.fire('fortune-cookie-load-empty', this.name);
       }
       else if (value && this.handleValueAs.toLowerCase() === 'object') {
         var object = JSON.parse(value);
-        this.expires = object._expires || object.expires;
+        this.expires = object._expires || this._parseExpiresFromUTC(object.expires);
         this.value = object;
       } else {
         this.value = value.replace(/\"/g, '');
       }
     },
+
+    _parseExpiresFromUTC: function(timestamp) {
+      return timestamp && new Date(new Date(timestamp).toUTCString().substring(0, 25)).getTime();
+    },
+
     /**
      * Returns true if the cookie is currently set.
      *
