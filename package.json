@@ -24,12 +24,12 @@
   },
   "homepage": "https://github.com/IngressoRapidoWebComponents/fortune-cookie#readme",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.4.0"
+    "polymer": "Polymer/polymer#v2.8.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0"
+    "@polymer/iron-component-page": "github:PolymerElements/iron-component-page",
+    "@polymer/iron-demo-helpers": "github:PolymerElements/iron-demo-helpers",
+    "@webcomponents/webcomponentsjs": "^1.1.0",
+    "web-component-tester": "^4.0.0"
   }
 }
