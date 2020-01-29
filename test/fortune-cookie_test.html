@@ -5,10 +5,10 @@
     <title>fortune-cookie test</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
 
-    <link rel="import" href="../fortune-cookie.html">
+    <script type="module" src="../fortune-cookie.js"></script>
   </head>
   <body>
 
@@ -18,15 +18,16 @@
       </template>
     </test-fixture>
 
-    <script>
-      suite('fortune-cookie', function() {
+    <script type="module">
+import '../fortune-cookie.js';
+suite('fortune-cookie', function() {
 
-        test('instantiating the element works', function() {
-          let element = fixture('basic');
-          assert.equal(element.is, 'fortune-cookie');
-        });
+  test('instantiating the element works', function() {
+    let element = fixture('basic');
+    assert.equal(element.is, 'fortune-cookie');
+  });
 
-      });
-    </script>
+});
+</script>
   </body>
 </html>

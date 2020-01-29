@@ -1,11 +1,5 @@
 {
-  "name": "fortune-cookie",
   "description": "Element can be used to set and read cookies",
-  "version": "2.0.8",
-  "main": "fortune-cookie.html",
-  "authors": [
-    "Andrew Willard (https://github.com/andrew-silva-movile)"
-  ],
   "keywords": [
     "web-components",
     "web-component",
@@ -19,17 +13,32 @@
     "type": "git",
     "url": "git+https://github.com/IngressoRapidoWebComponents/fortune-cookie.git"
   },
+  "homepage": "https://github.com/IngressoRapidoWebComponents/fortune-cookie#readme",
+  "name": "fortune-cookie",
+  "version": "2.0.8",
+  "main": "fortune-cookie.js",
+  "authors": [
+    "Andrew Willard (https://github.com/andrew-silva-movile)"
+  ],
   "bugs": {
     "url": "https://github.com/IngressoRapidoWebComponents/fortune-cookie/issues"
   },
-  "homepage": "https://github.com/IngressoRapidoWebComponents/fortune-cookie#readme",
   "dependencies": {
-    "polymer": "Polymer/polymer#v2.8.0"
+    "polymer": "Polymer/polymer#v2.8.0",
+    "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
-    "@polymer/iron-component-page": "github:PolymerElements/iron-component-page",
-    "@polymer/iron-demo-helpers": "github:PolymerElements/iron-demo-helpers",
-    "@webcomponents/webcomponentsjs": "^1.1.0",
-    "web-component-tester": "^4.0.0"
-  }
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "web-component-tester": "^4.0.0",
+    "wct-browser-legacy": "^1.0.1"
+  },
+  "resolutions": {
+    "inherits": "2.0.3",
+    "samsam": "1.1.3",
+    "supports-color": "3.1.2",
+    "type-detect": "1.0.0"
+  },
+  "author": "Andrew Willard (https://github.com/andrew-silva-movile)"
 }
