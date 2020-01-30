@@ -1,47 +1,6 @@
-/*
-Original developed as PolymerLabs/polymer-cookie:
-Copyright 2013 The Polymer Authors. All rights reserved.
-*/
-/**
-The `fortune-cookie` element can be used to set and read cookies.
-You should have one `fortune-cookie` element per cookie you want to use, defined in many elements by its `name` property.
-You can then read the `value` of the cookie, or save the cookie by setting the `value` attribute or explicitly calling the `save` method.
-
-##### Beast features
-
-#### Choose to handle value as Object or String
-#### Get when cookies expires with `on-fortune-cookie-expired` observer
-#### Get when cookies loads empty with `on-fortune-cookie-load-empty` observer
-
-Example
-```html
-    <fortune-cookie
-      name="mycookie"
-      value="{{object}}"
-      on-handle-value-as="Object"
-      on-fortune-cookie-expired="_onExpired"
-      on-fortune-cookie-load-empty="_onLoadEmpty">
-    </fortune-cookie>
-```
-
-Save:
-```js
-    this.$.mycookie.save();
-```
-
-Reload:
-```js
-    this.$.mycookie.load();
-```
-
-@demo demo/index.html
-*/
-/*
-  FIXME(polymer-modulizer): the above comments were extracted
-  from HTML and may be out of place here. Review them and
-  then delete this comment!
-*/
 import '../@polymer/polymer/polymer-legacy.js';
+
+import { Polymer } from '../@polymer/polymer/lib/legacy/polymer-fn.js';
 
 Polymer({
   is: 'fortune-cookie',
