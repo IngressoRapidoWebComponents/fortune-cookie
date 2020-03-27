@@ -1,6 +1,6 @@
-import '../@polymer/polymer/polymer-legacy.js';
+import '@polymer/polymer/polymer-legacy.js';
 
-import { Polymer } from '../@polymer/polymer/lib/legacy/polymer-fn.js';
+import { Polymer } from '@polymer/polymer/lib/legacy/polymer-fn.js';
 
 Polymer({
   is: 'fortune-cookie',
