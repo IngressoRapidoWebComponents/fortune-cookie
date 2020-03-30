@@ -24,7 +24,6 @@
     "url": "https://github.com/IngressoRapidoWebComponents/fortune-cookie/issues"
   },
   "dependencies": {
-    "polymer": "Polymer/polymer#v2.8.0",
     "@polymer/polymer": "^3.0.0"
   },
   "devDependencies": {
